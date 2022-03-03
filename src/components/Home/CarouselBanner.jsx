@@ -1,6 +1,8 @@
-import React from 'react'
-
+import React, { useContext } from "react";
+import {homepageContext} from '../../context/HomepageContex'
 export default function CarouselBanner() {
+  const carousel  = useContext(homepageContext);
+  console.log(carousel);
   return (
     <>
     {/* ========================================== SECTION – HERO ========================================= */}

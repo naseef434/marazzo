@@ -1,8 +1,14 @@
-import React from 'react'
-import Navbar from './Navbar'
+import React, { useState, useEffect, useContext } from "react";
 
-export default function index() {
+import Navbar from "./Navbar";
+import { navbarContext } from "../../context/NavbarContex";
+export default function Index() {
+  const navbarItem = useContext(navbarContext);
+
   return (
-    <Navbar />
-  )
+    <>
+    
+      <Navbar navbarItem={navbarItem} />
+    </>
+  );
 }

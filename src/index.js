@@ -1,18 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Navbar from './components/navbar';
-import Footer from './components/footer';
+
 import reportWebVitals from './reportWebVitals';
-import Home from './components/Home';
-import Products from './components/Products/Index';
+
+import Auth from './route/Auth';
 
 
 ReactDOM.render(
   <React.StrictMode>
-   <Navbar />
-   {/* <Home /> */}
-   <Products />
-   <Footer />
+   <Auth />
   </React.StrictMode>,
   document.getElementById('root')
 );

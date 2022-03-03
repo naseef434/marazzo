@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Navbar() {
+export default function Navbar({navbarItem}) {
   return (
       <>
          {/* ============================================== HEADER ============================================== */}
@@ -23,16 +23,15 @@ export default function Navbar() {
           <ul className="list-unstyled list-inline">
             <li className="dropdown dropdown-small"> <a href="#" className="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"><span className="value">USD </span><b className="caret" /></a>
               <ul className="dropdown-menu">
-                <li><a href="#">USD</a></li>
+                <li><a href="#">AED</a></li>
                 <li><a href="#">INR</a></li>
-                <li><a href="#">GBP</a></li>
               </ul>
             </li>
             <li className="dropdown dropdown-small lang"> <a href="#" className="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"><span className="value">English </span><b className="caret" /></a>
               <ul className="dropdown-menu">
                 <li><a href="#">English</a></li>
-                <li><a href="#">French</a></li>
-                <li><a href="#">German</a></li>
+                <li><a href="#">Arabic</a></li>
+                
               </ul>
             </li>
           </ul>
@@ -52,7 +51,7 @@ export default function Navbar() {
       <div className="row">
         <div className="col-xs-12 col-sm-12 col-md-3 logo-holder"> 
           {/* ============================================================= LOGO ============================================================= */}
-          <div className="logo"> <a href="home.html"> <img src="assets/images/logo.png" alt="logo" /> </a> </div>
+          <div className="logo"> <a href="home.html"> <img src="assets/images/logoq.png" alt="logo" /> </a> </div>
           {/* /.logo */} 
           {/* ============================================================= LOGO : END ============================================================= */} </div>
         {/* /.logo-holder */}
@@ -63,13 +62,14 @@ export default function Navbar() {
             <form>
               <div className="control-group">
                 <ul className="categories-filter animate-dropdown">
-                  <li className="dropdown"> <a className="dropdown-toggle" data-toggle="dropdown" href="category.html">Categories <b className="caret" /></a>
+                  <li className="dropdown"> <a className="dropdown-toggle" data-toggle="dropdown" href="category.html">Sports <b className="caret" /></a>
                     <ul className="dropdown-menu" role="menu">
-                      <li className="menu-header">Computer</li>
-                      <li role="presentation"><a role="menuitem" tabIndex={-1} href="category.html">- Clothing</a></li>
-                      <li role="presentation"><a role="menuitem" tabIndex={-1} href="category.html">- Electronics</a></li>
-                      <li role="presentation"><a role="menuitem" tabIndex={-1} href="category.html">- Shoes</a></li>
-                      <li role="presentation"><a role="menuitem" tabIndex={-1} href="category.html">- Watches</a></li>
+                      {/* <li className="menu-header">Pick a sports</li> */}
+                      {navbarItem?.map((sports)=>(
+                        <li role="presentation" key={sports.id}><a role="menuitem" tabIndex={-1} href="category.html">{sports.name}</a></li>
+                      ))}
+                      
+                      
                     </ul>
                   </li>
                 </ul>
@@ -86,7 +86,7 @@ export default function Navbar() {
               <div className="items-cart-inner">
                 <div className="basket">
                   <div className="basket-item-count"><span className="count">2</span></div>
-                  <div className="total-price-basket"> <span className="lbl">Shopping Cart</span> <span className="value">$4580</span> </div>
+                  <div className="total-price-basket"> <span className="lbl">Shopping Cart</span> <span className="value">450-AED</span> </div>
                 </div>
               </div>
             </a>
@@ -138,63 +138,26 @@ export default function Navbar() {
             <div className="nav-outer">
               <ul className="nav navbar-nav">
                 <li className="active dropdown"> <a href="home.html">Home</a> </li>
-                <li className="dropdown yamm mega-menu"> <a href="home.html" data-hover="dropdown" className="dropdown-toggle" data-toggle="dropdown">Clothing</a>
+                <li className="dropdown yamm mega-menu"> <a href="home.html" data-hover="dropdown" className="dropdown-toggle" data-toggle="dropdown">Shop</a>
                   <ul className="dropdown-menu container">
                     <li>
                       <div className="yamm-content ">
                         <div className="row">
-                          <div className="col-xs-12 col-sm-6 col-md-2 col-menu">
-                            <h2 className="title">Men</h2>
-                            <ul className="links">
-                              <li><a href="#">Dresses</a></li>
-                              <li><a href="#">Shoes </a></li>
-                              <li><a href="#">Jackets</a></li>
-                              <li><a href="#">Sunglasses</a></li>
-                              <li><a href="#">Sport Wear</a></li>
-                              <li><a href="#">Blazers</a></li>
-                              <li><a href="#">Shirts</a></li>
-                            </ul>
-                          </div>
-                          {/* /.col */}
-                          <div className="col-xs-12 col-sm-6 col-md-2 col-menu">
-                            <h2 className="title">Women</h2>
-                            <ul className="links">
-                              <li><a href="#">Handbags</a></li>
-                              <li><a href="#">Jwellery</a></li>
-                              <li><a href="#">Swimwear </a></li>
-                              <li><a href="#">Tops</a></li>
-                              <li><a href="#">Flats</a></li>
-                              <li><a href="#">Shoes</a></li>
-                              <li><a href="#">Winter Wear</a></li>
-                            </ul>
-                          </div>
-                          {/* /.col */}
-                          <div className="col-xs-12 col-sm-6 col-md-2 col-menu">
-                            <h2 className="title">Boys</h2>
-                            <ul className="links">
-                              <li><a href="#">Toys &amp; Games</a></li>
-                              <li><a href="#">Jeans</a></li>
-                              <li><a href="#">Shirts</a></li>
-                              <li><a href="#">Shoes</a></li>
-                              <li><a href="#">School Bags</a></li>
-                              <li><a href="#">Lunch Box</a></li>
-                              <li><a href="#">Footwear</a></li>
-                            </ul>
-                          </div>
-                          {/* /.col */}
-                          <div className="col-xs-12 col-sm-6 col-md-2 col-menu">
-                            <h2 className="title">Girls</h2>
-                            <ul className="links">
-                              <li><a href="#">Sandals </a></li>
-                              <li><a href="#">Shorts</a></li>
-                              <li><a href="#">Dresses</a></li>
-                              <li><a href="#">Jwellery</a></li>
-                              <li><a href="#">Bags</a></li>
-                              <li><a href="#">Night Dress</a></li>
-                              <li><a href="#">Swim Wear</a></li>
-                            </ul>
-                          </div>
-                          {/* /.col */}
+                          {navbarItem?.map((sports,index)=>(
+                             <div className="col-xs-12 col-sm-6 col-md-2 col-menu"  key={sports.id}>
+                             <h2 className="title">{sports? sports.name : "nothing found"}</h2>
+                             {sports?.category?.map((category)=>(
+                               <ul className="links" key={category.id}>
+                               <li><a href="#">{category.name}</a></li>
+                            
+                             </ul>
+                             ))}
+                             
+                           </div>
+                          ))}
+                         
+                          
+                       
                           <div className="col-xs-12 col-sm-6 col-md-4 col-menu banner-image"> <img className="img-responsive" src="assets/images/banners/top-menu-banner.jpg" alt="" /> </div>
                           {/* /.yamm-content */} 
                         </div>

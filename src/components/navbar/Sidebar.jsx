@@ -15,6 +15,7 @@ import WideProducts from '../Home/WideProducts'
 import WideProductsNew from '../Home/WideProductsNew'
 
 export default function Sidebar() {
+ 
   return (
     <div>
     {/* ============================================== HEADER : END ============================================== */}
@@ -30,11 +31,11 @@ export default function Sidebar() {
 
             <SpecialOffer />
            
-           <Tags />
+           {/* <Tags /> */}
 
-            <SpecialDeals />
+            {/* <SpecialDeals /> */}
             
-            <NewsLetter />
+            {/* <NewsLetter /> */}
        
             <Testmonial />
           </div>
@@ -48,7 +49,7 @@ export default function Sidebar() {
             <FeaturedProducts />
             <WideProductsNew /> 
             <BlogSlider />
-            <FeauturedProductNew />
+            {/* <FeauturedProductNew /> */}
           </div>
           {/* /.homebanner-holder */} 
           {/* ============================================== CONTENT : END ============================================== */} 

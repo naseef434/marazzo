@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useContext } from "react";
 import Sidebar from '../navbar/Sidebar'
-
-export default function index() {
+import { navbarContext } from "../../context/NavbarContex";
+import { HomepageProvider } from "../../context/HomepageContex";
+export default function Index() {
+  const sportsItems  = useContext(navbarContext);
+ 
   return (
-    <Sidebar />
+      <HomepageProvider>
+        
+        <Sidebar sportsItems={sportsItems} />
+      </HomepageProvider>
+    
+    
   )
 }
